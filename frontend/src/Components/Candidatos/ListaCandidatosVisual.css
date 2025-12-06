@@ -1,0 +1,175 @@
+.listagem-container {
+    padding: 30px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 1000px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.listagem-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 30px;
+}
+
+.listagem-header .text {
+    color:#3B66A7; 
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.listagem-header .underline {
+    width: 61px;
+    height: 4px;
+    background-color: #3B66A7;
+    border-radius: 9px;
+}
+
+.filtro-form {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.form-group-filtro {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.input-filtro {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 250px;
+}
+
+.submit-button, .limpar-filtro-button, .action-button, .page-button, .cancel-button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.submit-button { background-color: #2ecc71; } 
+.limpar-filtro-button { background-color: #e67e22; } 
+.edit-button { background-color: #3498db; } 
+.delete-button { background-color: #e74c3c; } 
+.cancel-button { background-color: #7f8c8d; } 
+
+.submit-button:hover:not(:disabled) { background-color: #27ae60; }
+.limpar-filtro-button:hover:not(:disabled) { background-color: #d35400; }
+.edit-button:hover:not(:disabled) { background-color: #2980b9; }
+.delete-button:hover:not(:disabled) { background-color: #c0392b; }
+.cancel-button:hover:not(:disabled) { background-color: #616e71; }
+
+*:disabled {
+    background-color: #bdc3c7 !important;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.candidate-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.candidate-table th, .candidate-table td {
+    padding: 12px;
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+.candidate-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.acoes-coluna button {
+    margin-right: 5px;
+}
+
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.pagination-controls p {
+    font-weight: bold;
+    color: #555;
+}
+
+.page-button {
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 8px 15px;
+    border: 1px solid #ccc;
+}
+.page-button:hover:not(:disabled) { background-color: #e0e0e0; }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content h4 {
+    margin-top: 0;
+    color: #3B66A7;
+    margin-bottom: 20px;
+}
+
+.modal-content .form-group {
+    margin-bottom: 15px;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}

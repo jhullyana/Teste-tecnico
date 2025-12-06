@@ -1,0 +1,143 @@
+.headerP{
+    display: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    width: 60%;
+    margin-top: 10px;
+    font-size: 25px;
+
+}
+.underlineP{
+    width: 120px;
+    height: 10px;
+    background-color: rgb(17, 14, 175);
+    border-radius: 9px;
+    
+}
+.painel-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #212ea8;
+    padding-bottom: 15px;
+}
+
+.VisualPainel {
+    padding: 35px;
+}
+
+.nav-button {
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; 
+    border-radius: 25px;
+    
+}
+
+
+.nav-button-default {
+    background: #89a9c7;
+    margin-right: 10px;
+}
+
+
+.nav-button-active {
+    background: #3b66a7;
+}
+
+
+.nav-button-logout {
+    background: rgb(134, 10, 10);
+}
+
+.nav-button:hover:not(.nav-button-active) {
+    opacity: 0.8;
+}
+
+.upload-form-container {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+    display: block; 
+}
+
+
+.form-group input[type="text"], 
+.form-group input[type="file"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 250px; 
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+.submit-button {
+    background: #007bff; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; 
+}
+
+.submit-button:hover:not(:disabled) {
+    background: #0056b3;
+}
+
+.submit-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.results-box {
+    border: 1px dashed #007bff; 
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: #f9f9ff;
+}
+
+.full-text-content {
+    white-space: pre-wrap;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.error-message {
+    color: rgb(134, 10, 10); 
+    font-weight: bold;
+    padding: 8px;
+    border: 1px solid rgb(134, 10, 10);
+    border-radius: 4px;
+    background-color: #fce8e8;
+    margin-top: 10px;
+}
+
+.success-message {
+    color: darkgreen;
+    font-weight: bold;
+    padding: 8px;
+    border: 1px solid darkgreen;
+    border-radius: 4px;
+    background-color: #e8fce8;
+    margin-top: 10px;
+}

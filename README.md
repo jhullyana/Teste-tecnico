@@ -1,132 +1,145 @@
+
+
 # 📝 Desafio Técnico – Cadastro de Candidato com Análise de CV
 
-Bem-vindo ao desafio técnico!  
-Este repositório contém as instruções para desenvolver uma aplicação completa, incluindo autenticação, upload de currículo, análise de PDF, integração com API externa, filtros, paginação e manipulação de grande volume de dados.
+Bem-vindo ao meu desenvolvimento do desafio técnico!
+Este repositório contém a aplicação desenvolvida para cadastro de candidatos, envio e análise de currículos em PDF, integração com API externa, filtros, busca, e manipulação de dados com segurança.
 
 ---
 
 # 📌 Sumário
-- [Objetivo do Desafio](#-objetivo-do-desafio)
-- [Funcionalidades Obrigatórias](#-funcionalidades-obrigatórias)
-- [Diferenciais por Etapa](#-diferenciais-por-etapa)
-- [Critérios de Avaliação](#-critérios-de-avaliação)
-- [Tecnologias Permitidas](#-tecnologias-permitidas)
-- [Como Participar (Fork, Clone, Branch, PR)](#-como-participar)
+
+- [Objetivo do Projeto](#-objetivo-do-projeto)
+
+- [Funcionalidades Implementadas](#-funcionalidades-implementadas)
+
+- [Diferenciais e Arquitetura](#-diferenciais-e-arquitetura)
+
+- [Principais Desafios](#-principais-desafios)
+
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+
 - [Como Rodar o Projeto](#-como-rodar-o-projeto)
-- [Entrega Final](#-entrega-final)
-- [Nível do Candidato](#-nível-do-candidato)
 
----
+- [Possíveis Atualizações Futuras](#-possiveis-atualizacoes-futuras)
 
-# 🎯 Objetivo do Desafio
+# 🎯 Objetivo do Projeto
 
 Construir uma aplicação web onde o usuário possa:
 
-- Criar conta e fazer login  
-- Enviar um currículo em PDF  
-- Informar um CEP  
-- Ter o endereço preenchido automaticamente pela API **ViaCEP**  
-- Ter **nome, e-mail e telefone extraídos automaticamente** do PDF  
-- Gravar todos os dados no banco de dados, incluindo texto completo do PDF  
-- Permitir listagem de candidatos com:  
-  - Paginação  
-  - Filtros  
-  - Busca por conteúdo do currículo  
+-  Criar conta e fazer login
+-  Enviar um currículo em PDF
+-  Informar um CEP
+-  Ter o endereço preenchido automaticamente pela API ViaCEP
+-  Ter nome, e-mail e telefone extraídos automaticamente do PDF
+-  Gravar todos os dados no banco de dados, incluindo texto completo extraído do PDF
+-  Visualizar lista de candidatos cadastrados com:
+    -  Paginação
+    -  Filtros
+    -  Busca por conteúdo do currículo
+-  Editar e excluir currículos
 
-Este desafio simula um ambiente real de grande volume de dados e integrações múltiplas.
-
+O sistema busca simular um ambiente real de integração de múltiplos serviços e manipulação de dados.
 ---
 
-# 🧩 Funcionalidades Obrigatórias
+# 🧩 Funcionalidades Implementadas
 
-## 🔐 Autenticação
-- Cadastro de usuário  
-- Login com autenticação segura  
-- Proteção das rotas privadas  
+## Autenticação
 
-## 📄 Upload de PDF
-- Aceitar apenas PDF  
-- Extrair do PDF:
-  - Nome
-  - E-mail
-  - Telefone
-- Armazenar conteúdo completo do currículo para pesquisa
+   - Cadastro de usuário
+   - Login com JWT para autenticação segura
+   - Proteção das rotas privadas
+   - Criptografia de senhas com bcrypt
 
-## 📍 Consulta ViaCEP
-- Buscar endereço a partir do CEP informado  
-- Preencher logradouro, bairro, cidade e UF automaticamente  
+## Upload de PDF
 
-## 🗄️ Banco de Dados
-Salvar:
-- Dados pessoais  
-- Endereço retornado pelo ViaCEP  
-- Metadados do arquivo  
-- Conteúdo completo do PDF  
+   - Aceita apenas arquivos PDF
+   - Extração de:
+      -  Nome
+      -  E-mail
+      -  Telefone
+   - Armazena o conteúdo completo do PDF no banco de dados
 
-## 🔎 Listagem de Candidatos
-- Paginação  
-- Filtros combinados  
-- Busca textual no CV  
+## Consulta ViaCEP
 
-# ⭐ Diferenciais por Etapa
+  -  Busca endereço a partir do CEP informado
+  -  Preenche logradouro, bairro, cidade e UF automaticamente
 
-## 🔐 Autenticação
-- JWT com refresh token  
-- bcrypt para senhas  
+## Listagem de Candidatos
 
+  -  Paginação
+  -  Filtros combinados (nome, e-mail, telefone)
+  -  Busca textual no currículo
+  -  Edição e exclusão de registros
 
-## 📄 PDF
-- Regex robusto  
-- Normalização de texto  
-- Pipeline separado (upload → extração → sanitização → armazenamento)  
-- Tratamento para PDFs escaneados  
+# ⭐ Diferenciais e Arquitetura
 
+##  Arquitetura modular com separação de responsabilidades:
 
-## 🖥️ Frontend
-- Hooks bem utilizados  
-- React Query (cache)  
-- Componentização  
-- Máscara de CEP e telefone  
-- Feedback visual (loading, erro, vazio)  
+  -  Controllers-> lógica de rotas
+  -  Database -> conexão e queries
+  -  Services -> lógica de negócios e manipulação de dados
+  -  Tratamento de erros e validações
+  -  Frontend baseado em Vite, com React Hooks, Axios, React Query e componentização
+  -  Inspirado nas cores do site da Luto Curitiba
 
-# 🧪 Critérios de Avaliação
+# Principais Desafios
 
-### ✔ Funcionais
-- A aplicação funciona de ponta a ponta?
+### ✔ Extração confiável de dados do PDF usando Regex
 
-### ✔ Técnicos
-- Código bem estruturado?  
-- Separação de responsabilidades?  
+### ✔ Integração segura entre frontend, backend e banco de dados
 
-### ✔ Boas práticas
-- Tratamento de erros  
-- Clean code  
-- Validações  
+### ✔ Garantir criptografia de senhas e autenticação com JWT
+
+### ✔ Normalização de texto extraído de PDFs
 
 
-# 🛠️ Tecnologias Permitidas
+# 🛠️ Tecnologias Utilizadas
 
 ### Backend
-- Node.js 
+-Node.js
+-Express
+-PostgreSQL
+-bcrypt
+-JWT
 
 ### Frontend
-- React 
+-React (via Vite)
+-Axios
+-React Query
+-React Hooks (useState, useEffect)
 
 ### Banco de Dados
-- PostgreSQL (recomendado)
+- PostgreSQL 
+
+### Integrações
+-API ViaCEP
+-Regex para extração de PDF
 
 
 ---
 
-# 🚀 Como Participar
+# 🚀 Como Rodar o Projeto
 
-## **1. Faça um Fork do Repositório**
-No canto superior direito do GitHub, clique em **Fork**.
+## Utilize esses comandos no seu terminal (Lembrando que há a necessidade de especificar o backend e o frontend)
 
-## **2. Clone o Seu Fork**
-```bash
-git clone https://github.com/ti-lutocuritiba/Teste-tecnico.git
+# Backend
+cd backend
+npm install
+npm start
 
-## **3. Commit seu codigo com redme explicação os conceitos
+# Frontend
+cd frontend
+npm install
+npm run dev  
 
-## **4. Suba sua api e front end em algum abiente vercel render etc  adicione os links de acesso no repo 
+Acesse http://localhost:5173 (ou a porta exibida pelo Vite) para visualizar o frontend.
+
+# Possíveis Atualizações Futuras
+
+    -Tornar o frontend totalmente responsivo para dispositivos móveis
+    -Suporte a PDFs escaneados via OCR
+    -Dashboard administrativo para análise de candidatos
+    -Filtros avançados (data de envio, cidade, etc.)
+    -Melhorias visuais no frontend
+
